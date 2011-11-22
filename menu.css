@@ -6,9 +6,9 @@
 menu {display:block;}	 /*+position:relative; at all? ... seems that? ... html5 ... :/ ... */
 
 menu[type="toolbar"]{display:table-cell;}	/* article>->*/
-menu[type="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
+menu[type="toolbar"]>* {display:table-cell;position:relative;}	/* z-index:1;! */
 
-menu[type="context"]{position:relative;}	/*--position:absolute;? */
+menu[type="context"]{position:relative;}	/*--position:absolute; */
 
 menu[type="context"]>*{position:absolute;left:100%;top:0%;background-color:#ff00ff;visibility:hidden;}	/* ! */
 
@@ -20,7 +20,7 @@ menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hove
 
 menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
 
-menu[type="list"] {position:relative;}		/*display:table-cell;... futured ... on[context>list>*] context range include next range ? ...  */
+menu[type="list"] {position:relative;}		/*display:table-cell;... futured ... */
 
 /* ... end MENU TAG ... */
 

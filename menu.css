@@ -1,5 +1,5 @@
-/*[¤[TeRmiNuS_]@[menu.css]¤v_1.9_¤ ... */
-/*[date¤21:11:2011]¤¤code_[ ... */
+/*[¤[TeRmiNuS_]@[menu.css]¤v_2.0_¤ ... */
+/*[date¤23:11:2011]¤¤code_[ ... */
 
 /* ... MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
 
@@ -10,14 +10,15 @@ menu[type="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
 
 menu[type="context"]{position:relative;}	/* ... not final ... --position:absolute; */
 
-menu[type="context"]>*{position:absolute;left:100%;top:0%;background-color:#ff00ff;visibility:hidden;}	/* ! u*/
+menu[type="context"]>*{position:absolute;left:100%;top:0%;opacity:0;background-color:transparent;visibility:hidden;}	/*##opacity:0; ! u*/
 
-menu[type="context"]>*>*{position:relative;left:0%;margin-top:0%;opacity:0;visibility:hidden;}	/* ! ... this define are not final ... be vers vare ... */
+menu[type="context"]>*>*{position:relative;}/*##left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
 
 /* menu[type="context"]>*>*{position:static;}  *//* ... for another type context ... */
 /* ... types are futured ... :/ ...*/
 
-menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
+/*##menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
+menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... [TeRmiNuS]@[menu_tag_css]¤v_1.8¤ ... */
 
 menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
 
@@ -57,8 +58,8 @@ menu[type="list"]:hover {background-color:#80ff80;color:#000000;}
 
 
 /*Opera BUGfix :hover transitions ... */
-menu[type="context"]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
-menu[type="context"]>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
+menu[type="context"]:hover>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+menu[type="context"]>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
 
 /*  BUGfix overflow ... */
 * {z-index:1;cursor:default;}/**/
@@ -75,4 +76,4 @@ menu a:active	{border:none;background:#ffffff;color: #000000;}
 /*... reflex ...*/
 section menu[type="toolbar"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
 
-/* [Copyright 21/11/2011 SanEcIn][] ¤][¤¤] */
+/* [Copyright 23/11/2011 SanEcIn][] ¤][¤¤] */

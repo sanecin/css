@@ -31,7 +31,7 @@ terminus,.terminus {display:block;position:absolute;border:none;background-color
 
 /*][float ... */
 
-menu[type*="float"] {position:relative;min-height:30px;}
+menu[type*="float"] {position:relative;min-height:30px;}/* ... not final ! ... oncomment ... */
 
 menu[type*="float"]>menu {position:absolute;background-color:transparent;visibility:hidden;}/**/
 
@@ -51,8 +51,8 @@ menu[type*="Down"]>*,menu[class*="Down"] {top:100%;}
 menu[type*="Down"]>*>*,menu[class*="Down"]>* {margin-top:0%;background-color:#4040ff;color:#ffffff;}
 
 /*][BUGfix position correction ... too bad ... :/ ... */
-menu[type*="Up"]>menu,menu[class*="Up"] {height:130px;width:230px;} /*overflow-y:auto; ... */
-menu[type*="Up"]>menu>menu,menu[class*="Up"]>menu {height:130px;width:230px;overflow-y:auto;} /*height:230px; made fatal ... */
+menu[type*="Up"]>menu,menu[class*="Up"]:not([class="Up"]) {height:130px;width:230px;} /*overflow-y:auto; ... */
+menu[type*="Up"]>menu>menu,menu[class*="Up"]:not([class="Up"])>menu {height:130px;width:230px;} /*hoverflow-y:auto;eight:230px; made fatal ... */
 
 /*Opera BUGfix :hover transitions ... menu[type]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
 
@@ -105,10 +105,10 @@ menu[type="list"] {background-color:#509050;color:#ffffff;}
 menu[type="list"]:hover {background-color:#80ff80;color:#000000;}
 
 
-/*Opera BUGfix :hover transitions ... */
-menu[type]:hover>*{-o-transition:scale 0.5s linear,opacity 0.5s linear,visibility 0.01s linear;}
-menu {-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
-
+/*Opera BUGfix :hover transitions ... 
+scale 0.5s linear,opacity 0.5s linear,*/
+menu {-o-transition:visibility 0.01s linear 0.5s;}
+menu[type]:hover>*{-o-transition:visibility 0.01s linear;}
 /*  BUGfix overflow ... */
 * {z-index:1;cursor:default;}/**/
 

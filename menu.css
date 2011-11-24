@@ -1,45 +1,55 @@
 /*[¤[TeRmiNuS_]@[menu.css]¤v_2.0_¤ ... */
 /*[date¤23:11:2011]¤¤code_[ ... */
 
-/* ... [MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
+/* ... MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
 
 menu {display:block;}	 /* ... html5 ... :/ ...+position:relative; ... at all? ... seems that? ... bet no ... don't now ...  */
 
-menu[type="toolbar"]{display:table-cell;}	/* article>->*/
-menu[type="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
+/* ... */
 
-menu[type="context"]{position:relative;}	/* ... not final ! ... oncomment ... */
+/*][[ no type][... */
+menu:not([type]) {}	/*... position:absolute;position:relative; ... futured ... */
 
+/*][[type="_"][... */
+/*menu[type*="_"] {position:relative;} ... */
+
+/*][[type="list"][... */
+menu[type*="list"] {position:relative;}		/*display:table-cell;... futured ... */
+
+/*][[type="toolbar"][... */
+menu[type*="toolbar"]{display:table-cell;}	/* article>->*/
+menu[type*="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
+
+/*][[type="context"][... */
+menu[type="context"]{position:relative;}	/* ##... not final ! ... oncomment ... */
 menu[type="context"]>menu{position:absolute;left:100%;top:0%;opacity:0;background-color:transparent;visibility:hidden;}	/* ! */
-
-menu[type="context"]>*>*{position:relative;}/*##left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
+menu[type="context"]>menu>*{position:relative;}/*##left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
 
 /* menu[type="context"]>*>*{position:static;}  *//* ... for another type context ... */
 /* ... types are futured ... :/ ...*/
 
 /*##menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
 menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... [TeRmiNuS]@[menu_tag_css]¤v_1.8¤ ... */
+/*menu:hover {visibility:visible;opacity:1;}			z-index:1000;BUGfix[[logo_index.html]¤] ... */
 
 menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
 
-menu[type="list"] {position:relative;}		/*display:table-cell;... futured ... */
 
-/* ... [end MENU TAG][]] ... */
 
 /* ... ][AnotherTypes ... */
 terminus,.terminus {display:block;position:absolute;border:none;background-color:none;color:none;margin:0;padding:0;top:0;right:0;bottom:0;left:0;} /* censor */
 
-/*][float ... */
+/*][[type="float"][... */
 
-menu[type*="float"] {position:relative;min-height:30px;}/* ... not final ! ... oncomment ... */
+menu[type*="float"] {position:relative;min-height:30px;}/*## ... not final ! ... oncomment ... */
 
-menu[type*="float"]>menu {position:absolute;background-color:transparent;visibility:hidden;}/**/
+menu[type*="float"]>menu {position:absolute;visibility:hidden;}/*##background-color:transparent;*/
 
-menu[type*="float"]>*>*{visibility:visible;position:relative;-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}/* visibility:hidden;opacity:0;... */
+menu[type*="float"]>*>*{position:relative;visibility:visible;-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}/* visibility:hidden;opacity:0;... */
 
 menu[type*="float"]:hover>*>* {-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}		/*opacity:1;z-index:1000;	... fired blink hover ... */
 
-/*][vectors ... */
+/*[vectors ... */
 
 menu[type*="Left"]>*,menu[class*="Left"] {left:0%;top:0%;}
 menu[type*="Left"]>*>*,menu[class*="Left"]>* {left:-100%;background-color:#ff8080;}
@@ -52,16 +62,14 @@ menu[type*="Down"]>*>*,menu[class*="Down"]>* {margin-top:0%;background-color:#40
 
 /*][BUGfix position correction ... too bad ... :/ ... */
 menu[type*="Up"]>menu,menu[class*="Up"]:not([class="Up"]) {height:130px;width:230px;} /*overflow-y:auto; ... */
-menu[type*="Up"]>menu>menu,menu[class*="Up"]:not([class="Up"])>menu {height:130px;width:230px;} /*hoverflow-y:auto;eight:230px; made fatal ... */
+menu[type*="Up"]>menu>menu,menu[class*="Up"]:not([class="Up"])>menu {height:130px;width:230px;} /*overflow-y:auto;height:230px; made fatal ... */
 
 /*Opera BUGfix :hover transitions ... menu[type]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
 
 menu[type*="float"]:hover>*>* {-o-transition:scale 0.5s linear;}
 menu[type*="float"]>*>* {-o-transition:scale 0.5s linear;}*/
 
-/* ][ ... */
-
-/* ... ][type="hole" ... */
+/*][]][[type="hole"][ ... */
 
 section menu[type="in"] {}		/* ...width:100%;height:100%; */
 
@@ -73,6 +81,7 @@ section menu[type="hole_"]>*{position:absolute;background-color:#ff00ff;color:#0
 
 section menu[type="in_"]:hover>*>* {visibility:visible;opacity:1;}		/* ...width:100%;height:100%; */
 
+/*... ][] ... */
 /* ... ][type="hole" ... */
 /* ... ][type="hole" ... */
 

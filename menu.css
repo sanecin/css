@@ -22,16 +22,18 @@ menu[type*="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
 
 /*][[type="context"][... */
 menu[type="context"]{position:relative;}	/* ##... not final ! ... oncomment ... */
-menu[type="context"]>menu{position:absolute;left:100%;top:0%;opacity:0;background-color:transparent;visibility:hidden;}	/* ! */
-menu[type="context"]>menu>*{position:relative;}/*##left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
+menu[type="context"]>menu{position:absolute;visibility:hidden;}	/* ! */
+
+menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... [TeRmiNuS]@[menu_tag_css]¤v_1.8¤ ... */
+/*##menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
+/*menu:hover {visibility:visible;opacity:1;}			z-index:1000;BUGfix[[logo_index.html]¤] ... */
+
+menu[type="context"]>menu>*{}/*##position:relative;left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
 
 /* menu[type="context"]>*>*{position:static;}  *//* ... for another type context ... */
 /* ... types are futured ... :/ ...*/
 
-/*##menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
-menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... [TeRmiNuS]@[menu_tag_css]¤v_1.8¤ ... */
-/*menu:hover {visibility:visible;opacity:1;}			z-index:1000;BUGfix[[logo_index.html]¤] ... */
-
+menu[type="context"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}	/* ! transparent;-crossBUG ...*/
 menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
 
 
@@ -61,7 +63,7 @@ menu[type*="Down"]>*,menu[class*="Down"] {top:100%;}
 menu[type*="Down"]>*>*,menu[class*="Down"]>* {margin-top:0%;background-color:#4040ff;color:#ffffff;}
 
 /*][BUGfix position correction ... too bad ... :/ ... */
-menu[type*="Up"]>menu,menu[class*="Up"]:not([class="Up"]) {height:130px;width:230px;} /*overflow-y:auto; ... */
+menu[type*="Up"]>menu,menu[class*="Up"]:not([class="Up"]) {} /*height:130px;width:230px;overflow-y:auto; ... */
 menu[type*="Up"]>menu>menu,menu[class*="Up"]:not([class="Up"])>menu {height:130px;width:230px;} /*overflow-y:auto;height:230px; made fatal ... */
 
 /*Opera BUGfix :hover transitions ... menu[type]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}

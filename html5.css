@@ -1,0 +1,128 @@
+/*[¤[TeRmiNuS]@[html5.css_v_1.7.. ]¤¤¤ ... */
+
+/*][ ... selection disable ... 
+::selection {background:transparent;}
+*/
+/*][ ... selection disable ... 
+*{
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+}
+*/
+/*][ ... focus bug ... */
+*:focus{outline:none;}
+/*][ ... overflow bug ...*/ 
+* {z-index:1;cursor:default;}/*[!q!c!i]*/
+*:hover {z-index:1000;}/* ... target to menu ? ... */
+
+/*][ ... 
+* {padding:0px;margin: 0px;}
+
+* {
+	background:#008080;color:#ffffa0;
+	font-size:12px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;
+	cursor:default;
+}*/
+
+body{
+	background:#808080;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
+/*	border:2px #ffffff solid; */
+	width:100%;
+	height:100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+
+section,header,article,footer,menu {display:block;}	/* html5 ... :/ ... */
+
+section {position:relative;background:#d0ffd0;margin:20px auto;padding:10px;width:1000px;}
+
+section.html5_{
+	background: #ffffff ;/*url(/_Img_/Jack/Tera-Patrick.jpg) no-repeat center bottom;*/
+}
+
+.html5 *{margin:0;padding:0;}
+.html5 *{background: #ffffff;color:#000000;font-size:12px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
+.html5 *{text-align:center;}
+
+/*border,shodow,border-radius*/
+.html5 header,.html5 article,.html5 footer,.html5 i {border: 2px #000000 solid;}
+.html5 i,.html5 pre,.html5 h1 {text-shadow: 2px 2px 5px #000000;}
+.html5,.html5 header,.html5 article,.html5 footer,.html5 h1,.html5 h2,.html5 h3,.html5 h4,.html5 h5,.html5 h6,.html5 i,.html5 div
+{border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;}
+
+.html5 header{background:#80d0ff;padding:10px;}
+.html5 header h1{background:#60b0d0;color:#ffffff;padding: 5px 50px 5px 50px;}
+
+.html5 article {position:relative;background:#b0e0b0;margin:10px auto 10px auto;padding:10px;color:#ffffff;font-size:16px;font-weight:900;font-family:Verdana,Arial,Tahoma,Courier;}
+.html5 article *{text-align:left;}/*height:312px;*/
+
+.html5 footer {position:relative;background:#80b0d0;height:66px;}/*top:5px;*/
+
+.html5 div {}/*background:#80c0a0;padding:2px 10px;*/
+.html5 i {padding:2px 10px;background:#80b0b0;color:#ffffff;font:10px bold;font-family:Verdana;}
+.html5 pre {padding:10px 10px;background:#608080;color:#ffffff;font:12px bold;font-family:Verdana;}
+
+/*.html5 p,.html5 span,.html5 i {display:inline-block;}*/
+
+.html5 h1 {font-size:28px;}
+.html5 h2 {font-size:24px;}
+.html5 h3 {font-size:20px;}
+.html5 h4 {font-size:16px;}
+.html5 h5 {font-size:12px;}
+.html5 h6 {font-size:10px;}
+.html5 h7 {font-size:8px;}
+
+
+.html5 a,.html5 input,.html5 .w_th_{
+	cursor:pointer;
+	border:2px #000000 solid;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align:left;
+	-webkit-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+	-o-transition-duration:0.5s;
+	opacity: 1;
+}
+.html5 input{background:#0070b0;}
+.html5 input:visited{color:#ff80ff;}
+.html5 input:hover{background:#4080d0;border:2px #000000 solid;}
+.html5 input:active{background:#60a0f0;color:#ffffff;}
+
+.html5 a:link{background:#00b070;color:#ffffff;}
+.html5 a:visited,.html5 .w_th_:visited{background:#008050;color:#ffff80;}
+.html5 a:hover {
+/*	border:2px #000000 solid;*/
+}
+/*.html5 a:hover,*/.html5 .w_th_:hover{background:#40d080;color:#ffffff;border:2px #000000 solid;
+	-webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
+box-shadow:0px 0px 20px #000000;
+-webkit-box-shadow:0px 0px 20px #000000;
+-moz-box-shadow:0px 0px 20px #000000;
+opacity: 1;
+}
+
+/*.html5 a:active,*/.html5 .w_th_:active{background:#60f0a0;color:#ffffff;
+box-shadow:0px 0px 60px #00ff00;
+-webkit-box-shadow:0px 0px 60px #00ff00;
+-moz-box-shadow:0px 0px 60px #00ff00;
+	-webkit-transition-duration: 0.01s;
+	-moz-transition-duration: 0.01s;
+	-o-transition-duration: 0.01s;
+-webkit-transform:scale(1.2);
+-moz-transform:scale(1.2);
+-o-transform:scale(1.2);
+}
+
+
+/* [Copyright 20/12/2011 SanEcIn][] ¤][¤¤] */

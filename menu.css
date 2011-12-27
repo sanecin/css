@@ -1,140 +1,133 @@
-/*[¤[TeRmiNuS_]@[menu.css]¤v_2.0_¤ ... */
-/*[date¤23:11:2011]¤¤code_[ ... */
+/*[¤[TeRmiNuS_]@[menu.css]¤v_2.1_¤ ... */
+/*[date¤21:12:2011]¤¤code_[ ... */
+
+/** {z-index:1;cursor:default;}
+*:hover {z-index:1000;}*/
+
+/*section,header,article,footer,menu {display:block;}	 html5 ... :/ ... */
 
 /* ... MENU TAG ... http://www.w3.org/TR/html5/interactive-elements.html#the-menu-element */
 
-menu {display:block;}	 /* ... html5 ... :/ ...+position:relative; ... at all? ... seems that? ... bet no ... don't now ...  */
+menu {}	/* ... +position:relative; ... так , может , было бы правильно ... но не так весело ... :/ ... */
 
-/* ... */
+/* ... end MENU TAG ... */
 
-/*][[ no type][... */
-menu:not([type]) {}	/*... position:absolute;position:relative; ... futured ... */
+/* ][type="list" ... */
+menu[type="list_"] {position:relative;display:table-cell;}
+menu[type="list_"] {background-color:#509050;color:#ffffff;}
+menu[type="list_"]:hover {background-color:#80ff80;color:#000000;}
 
-/*][[type="_"][... */
-/*menu[type*="_"] {position:relative;} ... */
+/* ][type="toolbar_" ... */
+menu[type="toolbar_"] {display:table-cell;background-color:#60a060;color:#ffffff;}		/*position:relative;... futured ... */
+/*menu[type="toolbar_"]:hover {background-color:#ffffd0;}*/
+menu[type="toolbar_"]>menu{display:table-cell;}
 
-/*][[type="list"][... */
-menu[type*="list"] {position:relative;}		/*display:table-cell;... futured ... */
-
-/*][[type="toolbar"][... */
-menu[type*="toolbar"]{display:table-cell;}	/* article>->*/
-menu[type*="toolbar"]>* {display:table-cell;position:relative;}	/* ! */
-
-/*][[type="context"][... */
-menu[type="context"]{position:relative;}	/* ##... not final ! ... oncomment ... */
-menu[type="context"]>menu{position:absolute;visibility:hidden;}	/* ! */
-
-menu[type="context"]:hover>*{visibility:visible;opacity:1;}			/*z-index:1000;... fired hover ... [TeRmiNuS]@[menu_tag_css]¤v_1.8¤ ... */
-/*##menu[type="context"]:hover>*>*{visibility:visible;opacity:1;}			/*... fired hover ... */
-/*menu:hover {visibility:visible;opacity:1;}			z-index:1000;BUGfix[[logo_index.html]¤] ... */
-
-menu[type="context"]>menu>*{}/*##position:relative;left:0%;margin-top:0%;opacity:0;visibility:hidden;}	 ! ... this define are not final ... be vers vare ... */
-
-/* menu[type="context"]>*>*{position:static;}  *//* ... for another type context ... */
-/* ... types are futured ... :/ ...*/
-
-menu[type="context"]>menu{left:100%;top:0%;opacity:0;background-color:transparent;}	/* ! transparent;-crossBUG ...*/
-menu[type="toolbar"]>menu[type="context"]>*{left:0%;top:100%;}		/*float vector*/
+/* ][type^="context_" ... full propertyes */
+menu[type^="context_"]{position:relative;background-color:#90e090;color:#000000;}	/*  if -rel then floats out up level ... TAB style ... */
+menu[type^="context_"]:hover {background-color:#ffffd0;}
+menu[type^="context_"]>menu{position:absolute;visibility:hidden;}	/*left:0%;top:0%;transparent -opacity:без затухания...-hidden:отладка ... забавно ... особенно [-hidden+opacity [!i!f] новый принцип ] ... далее ... */
+menu[type^="context_"]>menu>*{position:relative;visibility:hidden;opacity:0;}	/*left:0%;top:0%; !relative for udefined floats */
+menu[type^="context_"]:hover>menu>*{visibility:visible;opacity:1;}
 
 
+menu[type^="context_"]>*>menu{box-shadow:0px 5px 15px #000000;-ms-box-shadow:0px 5px 15px #000000;-moz-box-shadow:0px 5px 15px #000000;-webkit-box-shadow:0px 5px 15px #000000;}
 
-/* ... ][AnotherTypes ... */
-terminus,.terminus {display:block;position:absolute;border:none;background-color:none;color:none;margin:0;padding:0;top:0;right:0;bottom:0;left:0;} /* censor */
+menu[type^="context_"]>menu>*{-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;}
+
+/*Opera BUGfix :hover transitions ... */
+menu[type^="context_"]>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear 0.5s;}
+menu[type^="context_"]:hover>menu>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
 
 /*][[type="float"][... */
+/*menu[type*="float"] {position:relative;min-height:30px;}## ... not final ! ... oncomment ... */
+/*menu[type*="float"]>menu {position:absolute;visibility:hidden;}##background-color:transparent;*/
+/* menu[type*="float"]>*>*{position:relative;visibility:visible;-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}... */
+/*menu[type*="float"]:hover>*>* {-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}		opacity:1;z-index:1000;	... fired blink hover ... */
+menu[type*="float"]>menu>menu{-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}
+menu[type*="float"]:hover>menu>menu{-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}
 
-menu[type*="float"] {position:relative;min-height:30px;}/*## ... not final ! ... oncomment ... */
+/*][[type="rotate"][... */
+menu[type*="rotate"]>menu{-o-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+menu[type*="rotate"]:hover>menu{-o-transform:rotate(-5deg);-moz-transform:rotate(-5deg);-webkit-transform:rotate(-5deg);}
 
-menu[type*="float"]>menu {position:absolute;visibility:hidden;}/*##background-color:transparent;*/
+/* ][float vectors classes */
+menu[class*="Right"] {left:100%;top:0%;}/* */
+menu[class*="Left"] {left:0%;top:0%;}/* */
+menu[class*="Up"] {top:-50%;}
+menu[class*="Down"] {top:100%;}
 
-menu[type*="float"]>*>*{position:relative;visibility:visible;-o-transform:scale(0);-moz-transform:scale(0);-webkit-transform:scale(0);}/* visibility:hidden;opacity:0;... */
+menu[class*="Right"]>* {left:0%;}/*margin-top:0%; */
+menu[class*="Left"]>* {left:-100%;}/*margin-top:0%; */
+menu[class*="Up"]>* {margin-top:-50%;}
+menu[class*="Down"]>* {margin-top:0%;}
 
-menu[type*="float"]:hover>*>* {-o-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);}		/*opacity:1;z-index:1000;	... fired blink hover ... */
+/*menu[class*="Up"],menu[class="Up"]>* {width:230px;height:150px;}*/
 
-/*[vectors ... */
 
-menu[type*="Left"]>*,menu[class*="Left"] {left:0%;top:0%;}
-menu[type*="Left"]>*>*,menu[class*="Left"]>* {left:-100%;background-color:#ff8080;}
-menu[type*="Right"]>*,menu[class*="Right"] {left:100%;top:0%;}
-menu[type*="Right"]>*>*,menu[class*="Right"]>* {left:0%;background-color:#00ff00;}
-menu[type*="Up"]>*,menu[class*="Up"] {top:-50%;}
-menu[type*="Up"]>*>*,menu[class*="Up"]>* {margin-top:-50%;background-color:#ffff00;}
-menu[type*="Down"]>*,menu[class*="Down"] {top:100%;}
-menu[type*="Down"]>*>*,menu[class*="Down"]>* {margin-top:0%;background-color:#4040ff;color:#ffffff;}
+/* ][type^="doc_" ... */
 
-/*][BUGfix position correction ... too bad ... :/ ... */
-menu[type*="Up"]>menu,menu[class*="Up"]:not([class="Up"]) {} /*height:130px;width:230px;overflow-y:auto; ... */
-menu[type*="Up"]>menu>menu,menu[class*="Up"]:not([class="Up"])>menu {height:130px;width:230px;} /*overflow-y:auto;height:230px; made fatal ... */
+menu[type^="doc_"],menu[type^="doc_"] menu{background-color:#b0b060;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
+menu[type^="doc_"]:hover{background-color:#d0d070;}
+menu[type^="doc_"]>menu {position:absolute;left:100%;top:0%;opacity:0;visibility:hidden;}
+menu[type^="doc_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
 
-/*Opera BUGfix :hover transitions ... menu[type]:hover>*>*{-o-transition:opacity 0.5s linear,visibility 0.01s linear;}
+menu[type^="doc_"] .intro {background-color:#606020;}
+menu[type^="doc_"] .intro pre{visibility:hidden;}
+menu[type^="doc_"]>menu:not(.intro) {}
 
-menu[type*="float"]:hover>*>* {-o-transition:scale 0.5s linear;}
-menu[type*="float"]>*>* {-o-transition:scale 0.5s linear;}*/
+/* ][type^="tab_" ... */
 
-/*][]][[type="hole"][ ... */
+menu[type^="tab_"],menu[type^="tab_"] menu{background-color:#60b0b0;color:#ffffff;text-shadow: 2px 2px 5px #000000;}	/* ! */
+menu[type^="tab_"]:hover{background-color:#70d0d0;}
+menu[type^="tab_"]>menu{position:absolute;left:0%;top:100%;opacity:0;visibility:hidden;}
+menu[type^="tab_"]:hover>menu{visibility:visible;opacity:1;}	/*z-index:1000; ... */
 
-section menu[type="in"] {}		/* ...width:100%;height:100%; */
+menu[type^="tab_"] .intro{background-color:#206060;}
+menu[type^="tab_"] .intro pre{visibility:hidden;}
+menu[type^="tab_"]>menu:not(.intro) {}
 
-section menu[type="hole"] {}		/* ...width:100%;height:100%;position:relative; */
-section menu[type="hole"]>*{position:absolute;background-color:#000000;color:#ffffff;}		/* ...width:100%;height:100%; */
+/* ][type^="hole" ... */
+menu[type="hole"]{background-color:#70c070;color:#000000;}
+menu[type="hole"]:hover{background-color:#80ff80;}
+menu[type^="context_"]>*>menu[type^="context_"]>menu:hover:not([type="hole"]){background-color:#ffff80;color:#000000;} /**/
 
-section menu[type="hole_"] {}		/*opacity:0;visibility:hidden; ... width:100%;height:100%;position:relative;*/
-section menu[type="hole_"]>*{position:absolute;background-color:#ff00ff;color:#000000;}		/*visibility:hidden; ...width:100%;height:100%; */
 
-section menu[type="in_"]:hover>*>* {visibility:visible;opacity:1;}		/* ...width:100%;height:100%; */
 
-/*... ][] ... */
-/* ... ][type="hole" ... */
-/* ... ][type="hole" ... */
-
-/* ... ][default view ... */
+/*[ === default view ===*/
 
 /* ... min ... */
 menu,menu a {
-	display:block;border:none;
-	min-width:100px;
-	min-height:1.7em;
-	border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;
-	transition-duration:0.5s;-o-transition-duration:0.5s;-ms-transition-duration:0.5s;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;
+	min-width:128px;
+	min-height:20px;
+	border:none;/* double */
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
-menu {background-color:#80d080;color:#000000;
-	box-shadow:0px 0px 5px #000000;-ms-box-shadow:0px 0px 5px #000000;-moz-box-shadow:0px 0px 5px #000000;-webkit-box-shadow:0px 0px 5px #000000;}
-
-/*menu:hover {background-color:#d0ffff;}*/
-
-menu[type="toolbar"] {background-color:#60a060;color:#ffffff;}
-menu[type="toolbar"]:hover {background-color:#70c070;}/**/
-
-menu[type="context"] {}
-menu[type="context"]>*>menu{background-color:#408040;color:#ffffd0;
-	box-shadow:0px 0px 15px #000000;-ms-box-shadow:0px 0px 15px #000000;-moz-box-shadow:0px 0px 15px #000000;-webkit-box-shadow:0px 0px 15px #000000;}
-menu[type="context"]>*>*>menu[type="context"]>*>menu:hover:not([type="list"]){background-color:#ffff80;color:#000000;} /**/
-menu[type="context"]:hover {background-color:#ffffd0;color:#00000;}
-
-menu[type="list"] {background-color:#509050;color:#ffffff;}
-menu[type="list"]:hover {background-color:#80ff80;color:#000000;}
-
-
-/*Opera BUGfix :hover transitions ... 
-scale 0.5s linear,opacity 0.5s linear,*/
-menu {-o-transition:visibility 0.01s linear 0.5s;}
-menu[type]:hover>*{-o-transition:visibility 0.01s linear;}
-/*  BUGfix overflow ... */
-* {z-index:1;cursor:default;}/**/
-
-*:hover {z-index:1000;}
-/*menu:hover,menu:hover>*{z-index:1000;}*/
-
-/*menu a,menu[type="context"]		{cursor:pointer;}*/
-
-menu a		{background-color:#70c070;color:#000000;text-decoration:none;}
-menu a:link	{border:none;}
-menu a:visited	{border:none;color:#000000;}
-menu a:hover	{border:none;background:#d0ffd0;color:#000000;}
+menu a {display:block;	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
+}
+menu a {cursor:pointer;text-decoration:none;background-color:#50b060;color:#ffffa0;}/*  */
+menu a:link {border:none;}
+menu a:visited {border:none;color:#ffff00;}
+menu a:visited:hover,menu a:hover {border:none;background:#d0ffd0;color:#000000;}
 menu a:active	{border:none;background:#ffffff;color: #000000;}
 
-/*... reflex ...*/
-section menu[type="toolbar"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
+/* ... min visibility ... */
+menu,menu:not([type]) {
+	background-color:#80d080;
+	color:#000000;
+	box-shadow:0px 0px 5px #000000;
+	-ms-box-shadow:0px 0px 5px #000000;
+	-moz-box-shadow:0px 0px 5px #000000;
+	-webkit-box-shadow:0px 0px 5px #000000;
+}
 
-/* ][Copyright 23/11/2011 SanEcIn][] ¤][¤¤] */
+
+/*... тормозит ...и вызывает баг overflow ... если нет сложных меню ...
+menu[type="toolbar_"]:last-of-type {-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.5)), to(transparent));}
+*/
+
+/* ][Copyright 21/12/2011 SanEcIn][] ¤][¤¤] */

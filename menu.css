@@ -13,7 +13,7 @@ menu {}	/* ... +position:relative; ... так , может , было бы правильно ... но не
 /* ... end MENU TAG ... */
 
 /* ][type="list" ... */
-menu[type="list_"] {position:relative;display:table-cell;}
+menu[type="list_"] {position:relative;}
 menu[type="list_"] {background-color:#509050;color:#ffffff;}
 menu[type="list_"]:hover {background-color:#80ff80;color:#000000;}
 
